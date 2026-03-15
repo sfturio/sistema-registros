@@ -1,11 +1,19 @@
-﻿class RegistroService {
-  constructor(registroRepository) {
-    this.registroRepository = registroRepository
-  }
+﻿import { registroRepository } from "../models/registroRepository.js";
 
-  async listar() {
-    return this.registroRepository.listarTodos()
-  }
-}
+export const registroService = {
+  list(filters) {
+    return registroRepository.list(filters);
+  },
 
-module.exports = RegistroService
+  create(payload) {
+    return registroRepository.create(payload);
+  },
+
+  update(id, payload) {
+    return registroRepository.update(id, payload);
+  },
+
+  remove(id) {
+    return registroRepository.remove(id);
+  },
+};

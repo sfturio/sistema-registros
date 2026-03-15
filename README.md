@@ -1,28 +1,33 @@
-﻿# Sistema de Registros - Projeto Colaborativo
+﻿# Sistema de Registros MVC
 
-## Resumo
-Projeto para 3 pessoas desenvolverem um sistema de registros (cadastros e consultas) com foco em organização de dados, histórico de alterações e rastreabilidade.
+Projeto de estudo para 3 pessoas com foco em portfolio: simples para executar, profissional na organizacao e documentacao.
 
-## Ideia do Projeto
-Criar uma plataforma web onde usuários autenticados possam:
-- registrar informações (ex.: clientes, ocorrências, tarefas ou ativos);
-- buscar e filtrar registros rapidamente;
-- editar dados com histórico de atualização;
-- visualizar métricas básicas por período.
+## Objetivo
+Entregar um sistema web de registros com:
+- cadastro, listagem, edicao e exclusao;
+- filtros por status e periodo;
+- trilha basica de auditoria (`created_at`, `updated_at`);
+- base solida para apresentar em portfolio.
 
-## Stack definida
-- Frontend: Vue.js (padrão MVC organizado por pastas)
-- API 1: Node.js + Express (MVC)
-- API 2: C# ASP.NET Core Web API (controller + service + repository)
-- Banco de dados: PostgreSQL
+## Stack principal (MVP)
+- Frontend: Vue.js
+- Backend: Node.js + Express
+- Banco: PostgreSQL
+
+## Escopo tecnico
+- Arquitetura MVC enxuta (controller, service, repository).
+- Contrato de API padronizado.
+- Validacao de dados no backend.
+- Setup local rapido para onboarding.
 
 ## Equipe (3 pessoas)
-- Pessoa 1: Frontend Vue + integração de telas
-- Pessoa 2: Backend Node + regras de negócio
-- Pessoa 3: Backend .NET + banco PostgreSQL + infraestrutura
+- Pessoa 1: Frontend (Vue + integracao API)
+- Pessoa 2: Backend Node (regras de negocio + API)
+- Pessoa 3: Banco e DevOps (PostgreSQL, migrations e ambiente)
 
-## Objetivo inicial (MVP)
-1. CRUD de registros
-2. Filtro por data/status
-3. Login simples
-4. Auditoria básica (criado em / atualizado em)
+## Estrutura
+- `frontend-vue/`: interface e consumo de API
+- `backend-node/`: API principal do projeto
+- `database/`: scripts SQL e evolucao de schema
+- `docs/`: arquitetura, setup e kanban
+- `backend-dotnet/`: trilha opcional de estudo (nao e caminho principal do MVP)

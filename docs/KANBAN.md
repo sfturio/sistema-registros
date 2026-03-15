@@ -1,48 +1,36 @@
-﻿# Kanban - Sistema de Registros (Equipe de 3)
+﻿# Kanban - Sistema de Registros (3 pessoas)
 
-## Pessoas
+## Objetivo da sprint
+Entregar MVP funcional com CRUD completo, filtros e auditoria basica.
+
+## Donos
 - Pessoa 1: Frontend Vue
 - Pessoa 2: Backend Node
-- Pessoa 3: Backend .NET + PostgreSQL
-
-## Regras rápidas
-- Cada tarefa deve ter PR próprio.
-- Mover tarefas de coluna conforme avanço.
-- Definição de pronto: código + teste básico + documentação curta.
+- Pessoa 3: Banco + Integracao + QA tecnico
 
 ## Backlog
-- [ ] Definir entidades finais do sistema (`Registro`, `Usuario`, `Status`).
-- [ ] Definir fluxo de autenticação inicial.
-- [ ] Definir padrão de resposta de API (erros/sucesso).
+- [ ] Definir contrato final de `Registro` (campos obrigatorios e status).
+- [ ] Definir padrao de resposta da API (sucesso/erro).
+- [ ] Definir criterio de aceite do MVP.
 
 ## To Do
-- [ ] [Pessoa 1] Criar layout base (header, sidebar, listagem de registros).
-- [ ] [Pessoa 1] Implementar tela de cadastro/edição de registro.
-- [ ] [Pessoa 1] Integrar frontend com endpoint `GET /registros`.
-- [ ] [Pessoa 2] Criar rotas Node para CRUD de registros.
-- [ ] [Pessoa 2] Implementar validação de payload no Node.
-- [ ] [Pessoa 2] Conectar Node ao PostgreSQL (repository real).
-- [ ] [Pessoa 3] Criar migration inicial no PostgreSQL.
-- [ ] [Pessoa 3] Implementar CRUD em .NET (`RegistrosController` + service + repository).
-- [ ] [Pessoa 3] Configurar DI + options com env vars para conexão de banco.
+- [ ] [Pessoa 1] Listagem de registros com filtro por status e periodo.
+- [ ] [Pessoa 1] Formulario de criar/editar com validacao basica.
+- [ ] [Pessoa 2] CRUD de `registros` no backend Node.
+- [ ] [Pessoa 2] Validacao de payload e tratamento de erros.
+- [ ] [Pessoa 3] Script SQL inicial + dados de teste.
+- [ ] [Pessoa 3] Auditoria (`created_at`, `updated_at`) e revisao de queries.
 
 ## Doing
-- [ ] [Pessoa 1] Ajustar estrutura MVC do frontend (views/controllers/services).
-- [ ] [Pessoa 2] Estruturar container de dependências no Node.
-- [ ] [Pessoa 3] Refinar `Program.cs` para configuração por ambiente.
+- [ ] Integracao frontend -> API Node.
 
 ## Review
-- [ ] Revisar contratos entre frontend e APIs (campos e status codes).
-- [ ] Revisar padrão de auditoria (`criado_em`, `atualizado_em`).
-- [ ] Revisar documentação de setup para novos colaboradores.
+- [ ] Revisao de contrato entre frontend e backend.
+- [ ] Revisao de setup para novo colaborador subir em menos de 20 minutos.
 
 ## Done
-- [x] Estrutura inicial de pastas do projeto criada.
-- [x] README com resumo e ideia do projeto criado.
-- [x] Esqueleto Vue + Node + .NET + SQL criado.
-- [x] Build inicial do backend .NET validada com sucesso.
+- [x] Estrutura inicial do projeto criada.
+- [x] Base de documentacao e kanban definida.
 
-## Próxima Sprint (sugestão)
-1. Fechar CRUD completo em uma API (Node ou .NET).
-2. Integrar frontend no CRUD completo.
-3. Entregar autenticação simples e auditoria básica.
+## Opcional (apos MVP)
+- [ ] Spike com `backend-dotnet/` para comparar implementacao.

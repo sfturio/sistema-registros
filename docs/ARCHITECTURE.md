@@ -1,22 +1,25 @@
-﻿# Arquitetura MVC (Base)
+﻿# Arquitetura (MVP de Portfolio)
 
-## Estrutura
-- `frontend-vue/`: views + controllers + models para interface
-- `backend-node/`: API em Node com MVC
-- `backend-dotnet/`: API em ASP.NET Core com DI e options
-- `database/`: scripts SQL e configuração PostgreSQL
+## Direcao
+Este projeto segue uma arquitetura simples e profissional:
 
-## Convenções
-- Model: representa os dados
-- View: apresentação (frontend) / resposta (backend)
-- Controller: coordena fluxo de requisição
-- Service/Repository: regras de negócio e persistência
+`Vue (UI) -> API Node (Express) -> PostgreSQL`
 
-## Configuração por ambiente
-Usar arquivo `.env` na raiz de cada backend com:
-- `DB_HOST`
-- `DB_PORT`
-- `DB_NAME`
-- `DB_USER`
-- `DB_PASSWORD`
-- `ASPNETCORE_ENVIRONMENT` (para backend .NET)
+## Camadas (Backend Node)
+- Controller: recebe request e valida entrada basica.
+- Service: aplica regras de negocio.
+- Repository: acessa dados no PostgreSQL.
+
+## MVC no Frontend
+- Views: telas e componentes principais.
+- Services: chamadas HTTP para API.
+- Models: tipos/estrutura dos dados de tela.
+
+## O que nao entra no MVP
+- Microservicos.
+- Mensageria/event bus.
+- Duas APIs ativas em producao.
+- Complexidade de infraestrutura sem necessidade.
+
+## Trilha opcional
+`backend-dotnet/` fica como estudo paralelo de C#/.NET, sem bloquear a entrega principal em Node.

@@ -1,15 +1,30 @@
-﻿const express = require('express')
-const createContainer = require('./config/container')
-const env = require('./config/env')
+﻿import express from "express";
+import cors from "cors";
+import { env } from "./config/env.js";
+import { pool } from "./config/pool.js";
+import { registroRouter } from "./routes/registroRoutes.js";
 
-const app = express()
-const container = createContainer()
+const app = express();
 
-app.get('/registros', async (_req, res) => {
-  const registros = await container.registroService.listar()
-  res.json(registros)
-})
+app.use(cors());
+app.use(express.json());
 
-app.listen(env.app.port, () => {
-  console.log(`Node API on port ${env.app.port}`)
-})
+app.get("/health", async (req, res) => {
+  try {
+    await pool.query("SELECT 1");
+    res.status(200).json({ ok: true, db: "up" });
+  } catch {
+    res.status(503).json({ ok: false, db: "down" });
+  }
+});
+
+app.use("/registros", registroRouter);
+
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ ok: false, error: "internal_error" });
+});
+
+app.listen(env.port, () => {
+  console.log(`API running on http://localhost:${env.port}`);
+});

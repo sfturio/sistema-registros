@@ -1,19 +1,19 @@
-﻿const dotenv = require('dotenv')
-dotenv.config()
+﻿import dotenv from "dotenv";
 
-function getEnv(name, fallback = '') {
-  return process.env[name] || fallback
-}
+dotenv.config();
 
-module.exports = {
-  app: {
-    port: Number(getEnv('PORT', 3000))
-  },
+const toInt = (value, fallback) => {
+  const num = Number(value);
+  return Number.isFinite(num) ? num : fallback;
+};
+
+export const env = {
+  port: toInt(process.env.PORT, 3001),
   db: {
-    host: getEnv('DB_HOST', 'localhost'),
-    port: Number(getEnv('DB_PORT', 5432)),
-    name: getEnv('DB_NAME', 'registros_db'),
-    user: getEnv('DB_USER', 'postgres'),
-    password: getEnv('DB_PASSWORD', 'postgres')
-  }
-}
+    host: process.env.DB_HOST || "localhost",
+    port: toInt(process.env.DB_PORT, 5432),
+    database: process.env.DB_NAME || "sistema_registros",
+    user: process.env.DB_USER || "postgres",
+    password: process.env.DB_PASSWORD || "postgres",
+  },
+};
