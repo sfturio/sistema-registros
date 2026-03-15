@@ -1,0 +1,24 @@
+{
+  "name": "sistemaregistrosmvc",
+  "version": "1.0.0",
+  "description": "Projeto de estudo para 3 pessoas com foco em portfolio: simples para executar, profissional na organizacao e documentacao.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfturio/sistema-registros.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sfturio/sistema-registros/issues"
+  },
+  "homepage": "https://github.com/sfturio/sistema-registros#readme"
+}
