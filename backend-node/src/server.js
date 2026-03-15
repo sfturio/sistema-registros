@@ -3,6 +3,7 @@ import cors from "cors";
 import { env } from "./config/env.js";
 import { pool } from "./config/pool.js";
 import { registroRouter } from "./routes/registroRoutes.js";
+const errorHandler = require("./middlewares/errorHandler");
 
 const app = express();
 
@@ -24,6 +25,8 @@ app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ ok: false, error: "internal_error" });
 });
+
+app.use(errorHandler); // tem que ser o ultimo middleware
 
 app.listen(env.port, () => {
   console.log(`API running on http://localhost:${env.port}`);
