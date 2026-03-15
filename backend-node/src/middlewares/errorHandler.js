@@ -7,8 +7,8 @@ function errorHandler(err, req, res, next) {
 
   return res.status(500).json({
     ok: false,
-    error: "erro_interno"
+    error: "erro_interno",
   });
 }
 
-module.exports = errorHandler;
+export default errorHandler;

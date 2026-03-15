@@ -3,7 +3,7 @@ import cors from "cors";
 import { env } from "./config/env.js";
 import { pool } from "./config/pool.js";
 import { registroRouter } from "./routes/registroRoutes.js";
-const errorHandler = require("./middlewares/errorHandler");
+import errorHandler from "./middlewares/errorHandler.js";
 
 const app = express();
 
