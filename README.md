@@ -12,7 +12,7 @@ Entregar um sistema web de registros com:
 ## Stack principal (MVP)
 - Frontend: Vue.js
 - Backend: Node.js + Express
-- Banco: PostgreSQL
+- Banco: Supabase (PostgreSQL)
 
 ## Escopo tecnico
 - Arquitetura MVC enxuta (controller, service, repository).
@@ -23,11 +23,11 @@ Entregar um sistema web de registros com:
 ## Equipe (3 pessoas)
 - Pessoa 1: Frontend (Vue + integracao API)
 - Pessoa 2: Backend Node (regras de negocio + API)
-- Pessoa 3: Banco e DevOps (PostgreSQL, migrations e ambiente)
+- Pessoa 3: Banco e DevOps (Supabase/PostgreSQL e ambiente)
 
 ## Estrutura
 - `frontend-vue/`: interface e consumo de API
 - `backend-node/`: API principal do projeto
-- `database/`: scripts SQL e evolucao de schema
+- `database/`: schema inicial SQL do Supabase
 - `docs/`: arquitetura, setup e kanban
 - `backend-dotnet/`: trilha opcional de estudo (nao e caminho principal do MVP)

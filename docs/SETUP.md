@@ -1,13 +1,14 @@
 ﻿# Setup Rapido
 
-## 1) Banco (PostgreSQL)
-1. Criar database local.
-2. Executar script em `database/001_create_registros.sql`.
+## 1) Banco (Supabase/PostgreSQL)
+1. Criar projeto no Supabase.
+2. Copiar a string de conexao para `backend-node/.env` em `DATABASE_URL`.
+3. Executar script em `database/schema.sql` no SQL Editor do Supabase.
 
 ## 2) Backend Node
 1. Ir para `backend-node/`.
 2. Copiar `.env.example` para `.env`.
-3. Ajustar credenciais do PostgreSQL.
+3. Ajustar `DATABASE_URL` do Supabase.
 4. Instalar dependencias e iniciar API.
 
 ## 3) Frontend Vue

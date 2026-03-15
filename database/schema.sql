@@ -1,4 +1,4 @@
-﻿create table if not exists public.registros (
+create table if not exists public.registros (
   id bigserial primary key,
   titulo varchar(120) not null,
   descricao text,
